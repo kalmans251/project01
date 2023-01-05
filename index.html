@@ -1,1 +1,89 @@
-Hello
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        a{
+            text-decoration: none;
+        }
+        ul{
+            list-style-type: none;
+        }
+        .wrap{
+            position:relative;
+        }
+        header{
+            background-color: red;
+        }
+        #main_head{
+            width:1130px;
+            height:160px;
+            background-color: aqua;
+            margin:0 auto;
+        }
+        #container{
+            width:1130px;
+            margin:0 auto;
+            background-color: rgba(0, 0, 0, 0.19);
+            position: relative;
+            
+        }
+        #nav_left{
+            width:30%;
+            background-color: rgba(255, 0, 0, 0.264);
+            float:left;
+        }
+        #main_box{
+            width: 70%;
+            background-color: blue;
+            float:left;
+        }
+        #clear{
+            clear:both;
+        }
+        #box1_left{
+            width:80%;
+            height:700px;
+            background-color: black;
+            position:relative;
+            
+        }
+        #box1_right{
+            width:80%;
+            height:500px;
+            background-color: black;
+            position:relative;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class = "wrap">
+
+        <header><div id = "main_head"><a href="index.html">로고</a></header>
+            
+        <div id = "container">
+            
+            <nav id = nav_left>
+                <div id="box1_left"></div>
+            </nav>
+            
+            <main id = main_box>
+                <div id="box1_right"></div>
+            </main>
+
+            <div id = "clear"></div>
+        </div>
+
+
+    </div>  
+</body>
+</html>
