@@ -5,34 +5,120 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="jquery-3.6.3.min.js" ></script> 
     <style>
-        
+
+        /*------------------Overal--------------------*/
+
         *{
             margin:0px;
             padding:0px;
         }
         body{
-            background-color: rgba(0, 0, 0, 0.924);
+            
         }
         a{
             text-decoration: none;
+            color:black;
         }
         ul{
             list-style-type: none;
         }
+        #clear{
+           clear:both;
+        }
+
+        /*------------------Wrap--------------------*/
+
         .wrap{
             position:relative;
+            background-color: rgba(0, 0, 0, 0.924);
         }
+
+        /*------------------Head--------------------*/
+
         header{
             background-color: rgb(226, 225, 225);
         }
         #main_head{
             width:1130px;
-            height:160px;
-            
+            height:130px;
             margin:0 auto;
         }
-        #container{
+
+        #main_nav_box{
+            position:relative;
+            float:right;
+            width:64%;
+            margin:0 auto;
+            margin-top:60px;
+            height: 31px;
+            
+            
+        }
+        #main_nav_box div{
+            float:left;
+            width:19%;
+            text-align: center;
+            border-radius:10px;
+            margin:0.25%;
+            height:fit-content;
+        }
+        
+        
+        #main_nav_box > div div{
+            height:35px;
+            width:100%;
+        }
+
+        .mainnav > div a{
+            text-align: left;
+            font-size: 28px;
+            font-weight: bold;
+            font-family: "굴림";
+        }
+
+        #main_nav_box .mn_ul{
+            height:100px;
+            position: relative;
+            z-index: 1;
+            display: none;
+            height: fit-content;
+            margin-top: 4px;
+            padding:3px;
+            background-color: gray;
+        }
+
+        
+
+        #main_nav_box li{
+            background-color: rgb(225, 225, 226);
+            line-height: 40px;
+            background-color: rgb(198, 211, 211);
+            border-radius: 3px;
+            border:1px solid black;
+            margin-top:1px;
+            margin-bottom:1px;
+        }
+        
+        
+
+        #main_upper_nav{
+            float:right;
+            margin-top:8px;
+            width:auto;
+        }
+
+        #main_upper_nav li{
+            display: inline;
+            margin-left:12px;
+            font-size: 14px;
+        }
+        #main_upper_nav a:hover{text-decoration:underline;}
+
+        /*-------------------Nav Outline-------------------*/
+
+        #contents_container{
             width:1130px;
             margin:0 auto;
             background-color: rgba(0, 0, 0, 0.19);
@@ -44,51 +130,205 @@
             background-color: rgba(255, 0, 0, 0.264);
             float:left;
         }
+
+        #box1_nav{
+            width:80%;
+            height:700px;
+            background-color: black;
+            position:relative;
+        }
+
+        /*-----------------Main Outline---------------------*/
+
         #main_box{
             width: 70%;
             background-color: blue;
             float:left;
         }
-        #clear{
-            clear:both;
-        }
-        #box1_left{
-            width:80%;
-            height:700px;
-            background-color: black;
-            position:relative;
-            
-        }
-        #box1_right{
+        
+        #box1_main{
             width:80%;
             height:500px;
             background-color: black;
             position:relative;
             
         }
+
+        /*------------------footer--------------------*/
+
+        footer{
+            background-color: rgb(226, 225, 225);
+        }
+
+        #footer_outline{
+            width:1130px;
+            height:220px;
+        }
+
+        /*--------------------------------------*/
+
     </style>
+
+    
+    <script>  
+        $(document).ready(function(){
+            var mainnav= $(".mainnav");
+            var mn_ul = $(".mn_ul");
+            
+            
+            
+            
+            if(x==0){
+                for(let i = 0 ; i < mainnav.length ; i++ ){
+                    $(mainnav[i]).mouseenter(function(){
+                        $("div",this).css({"box-shadow":"0px 0px 5px gray"});
+                        $("a",this).css({"font-size":"30px"});
+                        $(mn_ul[i]).slideDown(100);
+                        if(x==0){
+                            x=1;
+                        }
+                    });
+                }
+            }else{
+                for(let i = 0 ; i < mainnav.length ; i++ ){
+                    $(mainnav[i]).mouseleave(function(){
+                        $("div",this).css({"box-shadow":"none"});
+                        $("a",this).css({"font-size":"28px"});
+                        $(mn_ul[i]).slideUp(100);
+                        if(x==1){
+                            x=0;
+                        }
+                    });
+                
+                }
+            }
+
+        });
+    </script>  
+    
+    
 </head>
 <body>
+
+    
+    
+
+
     <div class = "wrap">
 
         <header>
-            <img style="width:160px;height:160px;" src="img/logo.jpg" >
+            <div id="main_head">
+                <img style="width:160px;height:160px;" src="img/logo.jpg" >
 
-        
+                <div id="main_upper_nav">
+                    <ul>
+                        <li><a href="#"><i>로그인</i></a></li>
+                        <li><a href="#"><i>회원가입</i></a></li>
+                        <li><a href="#"><i>고객센터</i></a></li>
+                        
+                    </ul>
+                </div>
+
+                <div id = "main_nav_box">
+                    <div class="mainnav">
+                        <div ><a href="#">상점</a></div>
+                        <div class="mn_ul">
+                            <ul>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                    <div class="mainnav">
+                        <div ><a href="#">장바구니</a></div>
+                        <div class="mn_ul">
+                            <ul>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mainnav">
+                        <div ><a href="#">내정보</a></div>
+                        <div class="mn_ul">
+                            <ul>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mainnav">
+                        <div><a href="#">고객센터</a></div>
+                        <div class="mn_ul">
+                            <ul>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div  class="mainnav">
+                        <div><a href="#">문의상담</a></div>
+                        <div class="mn_ul">
+                            <ul>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                                <li><a href ="#">###</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
         </header>
             
-        <div id = "container">
-            
+        <div id = "contents_container">
+
             <nav id = nav_left>
-                <div id="box1_left"></div>
+                <div id="box1_nav"></div>
             </nav>
             
             <main id = main_box>
-                <div id="box1_right"></div>
+                <div id="box1_main"></div>
             </main>
+
+
 
             <div id = "clear"></div>
         </div>
+
+
+        <footer>
+            <div id = "footer_outline">
+
+            </div>
+        </footer>
 
 
     </div>  
