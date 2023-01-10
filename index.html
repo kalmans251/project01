@@ -31,7 +31,7 @@
         /*------------------Wrap--------------------*/
 
         .wrap{
-            position:relative;
+            
             background-color: rgba(0, 0, 0, 0.924);
         }
 
@@ -44,17 +44,23 @@
             width:1130px;
             height:130px;
             margin:0 auto;
+            position: relative;
+        }
+
+        #main_head > img{
+            position:absolute;
         }
 
         #main_nav_box{
-            position:relative;
-            float:right;
-            width:64%;
-            margin:0 auto;
-            margin-top:60px;
-            height: 31px;
+            position:absolute;
             
             
+            
+            width:100%;
+            overflow: hidden;
+            background-color: gray;
+
+            z-index: 1;
         }
         #main_nav_box div{
             float:left;
@@ -81,8 +87,6 @@
         #main_nav_box .mn_ul{
             height:100px;
             position: relative;
-            z-index: 1;
-            display: none;
             height: fit-content;
             margin-top: 4px;
             padding:3px;
@@ -95,8 +99,8 @@
             background-color: rgb(225, 225, 226);
             line-height: 40px;
             background-color: rgb(198, 211, 211);
-            border-radius: 3px;
-            border:1px solid black;
+            
+            
             margin-top:1px;
             margin-bottom:1px;
         }
@@ -171,39 +175,17 @@
 
     
     <script>  
-        $(document).ready(function(){
-            var mainnav= $(".mainnav");
-            var mn_ul = $(".mn_ul");
-            
-            
-            
-            
-            if(x==0){
-                for(let i = 0 ; i < mainnav.length ; i++ ){
-                    $(mainnav[i]).mouseenter(function(){
-                        $("div",this).css({"box-shadow":"0px 0px 5px gray"});
-                        $("a",this).css({"font-size":"30px"});
-                        $(mn_ul[i]).slideDown(100);
-                        if(x==0){
-                            x=1;
-                        }
-                    });
-                }
-            }else{
-                for(let i = 0 ; i < mainnav.length ; i++ ){
-                    $(mainnav[i]).mouseleave(function(){
-                        $("div",this).css({"box-shadow":"none"});
-                        $("a",this).css({"font-size":"28px"});
-                        $(mn_ul[i]).slideUp(100);
-                        if(x==1){
-                            x=0;
-                        }
-                    });
-                
-                }
-            }
 
+        $(document).ready(function(){
+
+            $("#main_nav_box").mouseenter(function(){
+                $(this).css({"height":"fit-content"});
+            });
+            $("#main_nav_box").mouseleave(function(){
+                $(this).css({"height":"35px"});
+            });
         });
+
     </script>  
     
     
@@ -212,13 +194,17 @@
 
     
     
-
+    <div >
+        <div id="main_head">
+            
+        </div>
+    </div>
 
     <div class = "wrap">
 
         <header>
-            <div id="main_head">
-                <img style="width:160px;height:160px;" src="img/logo.jpg" >
+            
+                
 
                 <div id="main_upper_nav">
                     <ul>
