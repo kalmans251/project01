@@ -24,20 +24,23 @@
         /*------------------Overal--------------------*/
 
         /*------------------header--------------------*/
-
+        #logo_box{
+            width:fit-content;
+        }
+        
         #wrap{
-            width:80%;
             float:left;
+            overflow: hidden;
+            width:100%;
         }
 
         #header_outline{
             float:left;
-            background-color: gray;
+            background-color: rgb(228, 228, 228);
             width:100%;
             height: 50px;
         }
         #logo1{
-            
             float:left;
             width:80px;
             height: 50px;
@@ -71,12 +74,95 @@
         }
         
         #compressed_nav{
-            width:20%;
-            height:100px;
-            background-color: black;
+            
+            width:0px;
+            height:800px;
+            background-color: rgb(87, 147, 224);
            float:left;
         }
+        #absolute{
+            position:absolute;
+            width:100%;
+        }
+        #small_listbox{
+            position:absolute;
+            background-color: black;
+            width:30px;
+            height:30px;
+            left:10px;
+            top:10px;
+        }
+        
     </style>
+    <script src="jquery-3.6.3.min.js" ></script> 
+    <script>
+        
+        if(window.innerWidth > 900){
+            var n = 0;
+        }else{
+            var n = 1;
+            
+        }
+        
+
+        $(document).ready(function(){
+            $(window).resize(function(){
+                if(window.innerWidth > 900 && n ==1){
+                    n=0;
+                    $("#logo_box").css({
+                        position:"relative",
+                        left:"0"
+                    });
+                    $("#header_right").fadeIn();
+                    $("#header_nav_outline").fadeIn(300);
+                    $("#compressed_nav").animate({
+                        width:"0px"
+                    });
+                    $("#wrap").animate({
+                        width:"99.5%"
+                    });
+                    $("#header_nav_outline").show();
+                    $("#small_listbox").hide();
+
+                }else if(window.innerWidth <= 900 && n ==0){
+                    n=1;
+                    
+                    $("#header_right").fadeOut();
+                    $("#header_nav_outline").fadeOut(300);
+                    $("#header_nav_outline").hide();
+                    $("#small_listbox").show();
+
+                    
+                }
+
+                if(window.innerWidth >900){
+                    $("#logo_box").css({
+                        margin:"0"
+                    });
+                }else{
+                    $("#logo_box").css({
+                        margin:"0 auto"
+                    });
+                }
+
+                function listToggle(){
+                    $("#compressed_nav").animate({
+                        width:"20%"
+                    });
+                    $("#wrap").animate({
+                        width:"79.5%"
+                    });
+                }
+
+                
+
+            });
+                
+           
+            
+        });
+        
+    </script>
 </head>
 <body>
     <div id="mother_wrap">
@@ -84,13 +170,17 @@
         <div id = "compressed_nav">
 
         </div>
-
+        <div id="absolute">
+            <div id="logo_box">
+                <img id="logo1" src="img/logo1.png">
+                <img id="logo2" src="img/logo2.png">
+            </div>
+        </div>
 
         <div id="wrap">
             <div id = "header_outline">
-                <div id="logo_box">
-                    <img id="logo1" src="img/logo1.png">
-                    <img id="logo2" src="img/logo2.png">
+                <div id="small_listbox" onClick ="listToggle();">
+                    
                 </div>
             
                 <div id="header_right">
@@ -111,7 +201,13 @@
                 </div>
             
             </div>
+
+            <div>메인</div>
+
         </div>
+
+
+
     </div>
 
 
