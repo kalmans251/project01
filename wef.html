@@ -1,15 +1,473 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        /*------------------Overal--------------------*/
+        
+        body{
+             background-color: rgb(160, 243, 152);
+        }
+        
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        a{
+            text-decoration: none;
+            color:black;
+        }
+        ul{
+            list-style-type: none;
+        }
+        #clear{
+           clear:both;
+        }
+        /*------------------Overal--------------------*/
+
+        /*------------------header--------------------*/
+        #logo_box{
+            width:fit-content;
+        }
+        
+        #wrap{
+            float:left;
+            overflow: hidden;
+            width:100%;
+        }
+
+        #header_outline{
+            float:left;
+            background-color: rgb(228, 228, 228);
+            width:100%;
+            height: 50px;
+            position:relative;
+            left:0;
+            top:0;
+        }
+        #logo1{
+            float:left;
+            width:80px;
+            height: 50px;
+        }
+        #logo2{
+            float:left;
+            position:relative;
+            right:20px;
+            width:150px;
+            height: 50px;
+        }
+        #header_nav_outline{
+            margin:0 auto;
+            width:450px;
+        }
+        #header_nav_outline ul{
+            padding-top:15px;
+            padding-bottom:14px;
+            width:100%;
+            padding-left: 5px;
+            padding-right: 5px;
+            
+        }
+        #header_nav_maintext_li{
+            display: inline-block;
+            width:19%;
+        }
+        #header_right{
+            float:right;
+            display: none;
+        }
+        #header_right li{
+            display: inline-block;
+        }
+        
+        #compressed_nav{
+            padding-top: 5px;
+            width:0px;
+            height:;
+            background-color: rgb(128, 167, 217);
+           float:left;
+        }
+        #absolute{
+            position:absolute;
+            z-index: 1;
+            width:fit-content;
+            
+        }
+        #small_listbox{
+            display: none;
+            position:absolute;
+            background-color: black;
+            width:30px;
+            height:30px;
+            left:10px;
+            top:10px;
+        }
+        #main{
+            background-color: rgb(160, 243, 152);
+            width:100%;
+            
+        }
+        #hidden_header_nav{
+            position:absolute;
+            left:0px;
+            top:100px;
+            
+            width:100%;
+            height:5px;
+            background-color: gray;
+        }
+        #header_backgorund{
+            width:30%;
+            height:50px;
+            background-color: rgb(228, 228, 228);
+            position:absolute;
+            right:0;
+            
+        }
+        #top_banner{
+            width:100%;
+            height:50px;
+            background-color:aqua;
+            
+            right:0;
+        }
+        #compressed_nav:nth-child(2) ul{
+            display: none;
+        }
         
     </style>
+
+
+<!--===============================SCRIPT Start========================================-->
+    <script src="jquery-3.6.3.min.js" ></script> 
+
+    <script>
+
+        var list_minibox = $(".nav_mini_box");
+        
+        
+
+        var onetime =0;
+        
+        if(window.innerWidth < 900){
+            var n = 0;
+            var m=0;
+            var mode=0;
+        }else if(window.innerWidth < 90000){
+            var n = 1;
+            var m=1;
+            var mode=1;
+        }
+        window.onload = function(){
+            if(n==1){
+                    $("#logo_box").css({position:"relative",left:"0"});
+                    $("#logo_box").css({position:"relative",left:"0"});
+                    $("#mother_wrap").css({width:"100%"});
+                    $("#wrap").css({width:"100%"});
+                    $("#absolute").css({width:"fit-content"});
+                    $("#header_right").css({display:"block"});
+                    $("#header_nav_outline").fadeIn(300);
+                    $("#wrap").css({width:"100%"});
+                    $("#header_nav_outline").show();
+                    if(m==1){
+                        $("#absolute").css({left:"0"},300);
+                        $("#small_listbox").css({left:"10px"},100);
+                        $("#compressed_nav").css({width:"0px"},100);
+                        m=0;
+                    }else{
+                        $("#absolute").css({left:"0"});
+                        $("#small_listbox").fadeOut();
+                        $("#compressed_nav").css({width:"0px"});
+                    }
+                    $("#hidden_header_nav,#header_outline").mouseenter(function(){
+                        $("#hidden_header_nav").stop();
+                        $("#hidden_header_nav").animate({height:"300px"},80);
+                    });
+                    $("#hidden_header_nav,#header_outline").mouseleave(function(){
+                        $("#hidden_header_nav").stop();
+                        $("#hidden_header_nav").animate({height:"5px"},80);
+                    });
+            }else if(n==0){
+                    $("#small_listbox").css({left:"10px"});
+                    $("#mother_wrap").css({width:"100%"})
+                    $("#wrap").css({width:"100%"});
+                    $("#header_right").fadeOut();
+                    $("#absolute").css({left:"30%",width:"230px"});
+                    $("#header_nav_outline").css({display:"none"});
+                    $("main").css({width:"100%"});
+                    $("#small_listbox").css({display:"block"}); 
+                    $("#hidden_header_nav,#header_outline").mouseenter();
+                    $("#hidden_header_nav,#header_outline").mouseleave();
+            }
+
+        };
+        
+        
+        $(document).ready(function(){
+
+            $("#nav_mini_box1").click(function(){$("#nav_ul1").stop();$("#nav_ul1").slideToggle(100);});
+            $("#nav_mini_box2").click(function(){$("#nav_ul2").stop();$("#nav_ul2").slideToggle(100);});
+            $("#nav_mini_box3").click(function(){$("#nav_ul3").stop();$("#nav_ul3").slideToggle(100);});
+            $("#nav_mini_box4").click(function(){$("#nav_ul4").stop();$("#nav_ul4").slideToggle(100);});
+            $("#nav_mini_box5").click(function(){$("#nav_ul5").stop();$("#nav_ul5").slideToggle(100);});
+
+            $(window).resize(function(){
+
+
+
+
+                if(window.innerWidth < 900){
+                    
+                    mode=0;
+                    //
+                    $("#mother_wrap").stop();
+                    $("#wrap").stop();
+                    $("#header_right").stop();
+                    $("#absolute").stop();
+                    $("#header_nav_outline").stop();
+                    $("#header_nav_outline").stop();
+                    $("#small_listbox").stop();
+
+                    $("#small_listbox").css({left:"10px"});
+                    $("#mother_wrap").animate({width:"100%"})
+                    
+                    $("#header_right").fadeOut();
+                    
+                    $("#header_nav_outline").css({display:"none"});
+                    $("main").css({width:"100%"});
+                    $("#small_listbox").fadeIn(); 
+                    $("#hidden_header_nav,#header_outline").off("mouseenter");
+                    $("#hidden_header_nav,#header_outline").off("mouseleave");
+                    $("#hidden_header_nav").css({height:"5px"});
+
+                    $("#hidden_header_nav,#header_outline").mouseenter(function(){
+                        $("#hidden_header_nav").stop();
+                        $("#hidden_header_nav").animate({height:"5px"},80);
+                    });
+                    $("#hidden_header_nav,#header_outline").mouseleave(function(){
+                        
+                        $("#hidden_header_nav").stop();
+                        $("#hidden_header_nav").animate({height:"5px"},80);
+                    });
+                    if(m==1){
+                        $("#wrap").css({width:"calc( 100% - 150px )"});
+                        $("#absolute").animate({left:"200px"},100,"swing");
+                    }else{
+                        $("#wrap").animate({width:"100%"});
+                        $("#absolute").animate({left:"30%",width:"230px"});
+                    }
+                   
+                }else if(window.innerWidth < 90000){
+                    
+                    mode=1;
+                    //
+                    $("#mother_wrap").stop();
+                    $("#wrap").stop();
+                    $("#header_right").stop();
+                    $("#header_nav_outline").stop();
+                    $("#wrap").stop();
+                    $("#header_nav_outline").stop();
+                    
+
+                    $("#main").css({width:"100%"});
+                    $("#absolute").css({width:"fit-content"});
+                    $("#logo_box").css({position:"relative",left:"0"});
+                    $("#mother_wrap").animate({width:"100%"});
+                    $("#wrap").animate({width:"100%"});
+                    $("#header_right").fadeIn();
+                    $("#header_nav_outline").fadeIn(300);
+                    $("#wrap").animate({width:"100%"});
+                    $("#header_nav_outline").show();
+                    if(m==1){
+                        $("#absolute").stop();
+                        $("#small_listbox").stop();
+                        $("#small_listbox").stop();
+                        $("#compressed_nav").stop();
+
+                        $("#absolute").animate({left:"0"},300);
+                        $("#small_listbox").animate({left:"10px"},100);
+                        $("#small_listbox").fadeOut(200);
+                        $("#compressed_nav").animate({width:"0px"},100);
+                        m=0;
+                    }else{
+                        $("#absolute").stop();
+                        $("#small_listbox").stop();
+                        $("#compressed_nav").stop();
+
+                        $("#absolute").animate({left:"0"});
+                        $("#small_listbox").fadeOut();
+                        $("#compressed_nav").animate({width:"0px"});
+                    }
+                    $("#hidden_header_nav,#header_outline").off("mouseenter");
+                    $("#hidden_header_nav,#header_outline").off("mouseleave");
+                    $("#hidden_header_nav,#header_outline").mouseenter(function(){
+                        $("#hidden_header_nav").stop();
+                        $("#hidden_header_nav").animate({height:"300px"},80);
+                    });
+                    $("#hidden_header_nav,#header_outline").mouseleave(function(){
+                        $("#hidden_header_nav").stop();
+                        $("#hidden_header_nav").animate({height:"5px"},80);
+                    });
+                }
+            });
+        });
+        function listToggle(){
+            if(m==0){
+                $("#compressed_nav").stop()
+                $("#small_listbox").stop()
+                $("#absolute").stop();
+                $("#wrap").stop();
+                $("#absolute").animate({left:"200px"},100,"swing");
+                $("#compressed_nav").animate({width:"150px"},100,"swing");
+                $("#wrap").css({width:"calc( 100% - 150px )"});
+                $("#small_listbox").animate({left:"10px"});
+                
+                m=1;
+            }else if(m=1){
+                $("#compressed_nav").stop()
+                $("#small_listbox").stop()
+                $("#absolute").stop();
+
+                $("#compressed_nav").animate({width:"0"},100,"swing");
+                $("#wrap").animate({width:"100%"},130,"swing");
+                $("#small_listbox").animate({left:"10px"});
+                $("#absolute").animate({left:"30%"},100);
+                m=0;
+            }
+        }
+
+        
+        
+        
+        
+        
+        
+
+
+    </script>
+    <!--===============================SCRIPT End========================================-->
 </head>
 <body>
+
+    <script>
+        
+    </script>
+
+<div id="top_banner"></div>
+<div id="header_backgorund"></div>
+</div>
+    
+    <div id = "mother_wrap">
+        <div id = "hidden_header_nav"></div>
+        <div id = "compressed_nav">
+            <div style="background-color: red;height:50px;" > div1</div>
+            <div> 
+                <div id = "nav_mini_box1" >상점</div>
+                <ul id = "nav_ul1">
+                    <li><a href = "#">###</li>
+                    <li><a href = "#">###</li>
+                    <li><a>###</li>
+                    <li><a>###</li>
+                </ul>    
+            </div>
+            <div> 
+                <div id = "nav_mini_box2" >장바구니</div>
+                <ul id = "nav_ul2">
+                    <li><a href = "#">###</li>
+                    <li><a href = "#">###</li>
+                    <li><a>###</li>
+                    <li><a>###</li>
+                </ul>    
+            </div>
+            <div> 
+                <div id = "nav_mini_box3">내정보</div>
+                <ul id = "nav_ul3">
+                    <li><a href = "#">###</li>
+                    <li><a href = "#">###</li>
+                    <li><a>###</li>
+                    <li><a>###</li>
+                </ul> 
+            </div>
+            <div> 
+                <div id = "nav_mini_box4">문의사항</div>
+                <ul id = "nav_ul4">
+                    <li><a href = "#">###</li>
+                    <li><a href = "#">###</li>
+                    <li><a>###</li>
+                    <li><a>###</li>
+                </ul>   
+            </div>
+            <div > 
+                <div id="nav_mini_box5">건의사항</div>
+                <ul id = "nav_ul5">
+                    <li><a href = "#">###</li>
+                    <li><a href = "#">###</li>
+                    <li><a>###</li>
+                    <li><a>###</li>
+                </ul>  
+            </div>
+            
+           
+        </div>
+        <div id="absolute">
+            <div id="logo_box">
+                <img id="logo1" src="img/logo1.png">
+                <img id="logo2" src="img/logo2.png">
+            </div>
+        </div>
+
+        <div id="wrap">
+            <div id = "header_outline">
+                <div id="small_listbox" onClick ="listToggle();">
+                    
+                </div>
+            
+                <div id="header_right">
+                    <ul>
+                        <li><a href="#">로그인</li>
+                        <li><a href="#">회원가입</li>
+                    </ul>
+                </div>
+
+                <div id="header_nav_outline">
+                    <ul>
+                        <li id="header_nav_maintext_li"><a href="#">상점</a></li>
+                        <li id="header_nav_maintext_li"><a href="#">장바구니</a></li>
+                        <li id="header_nav_maintext_li"><a href="#">내정보</a></li>
+                        <li id="header_nav_maintext_li"><a href="#">문의사항</a></li>
+                        <li id="header_nav_maintext_li"><a href="#">건의사항</a></li>
+                    </ul>
+                
+
+
+                </div>
+            </div>
+
+            <div id="main" style="float:left;margin-top:5px;align-content: center;"> 
+                
+                <img src="img/banner1.jpg" style="width:100% ; height:40%;">
+            </div>
+
+            
+        </div>
+
+        <footer style="width:100% ; height:100px;background-color:red;float:left;"></footer>
+    </div>
+
+
+    
+
+    
+
+    
+    
+
+
+
     
 </body>
 </html>
