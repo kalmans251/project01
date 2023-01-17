@@ -1,0 +1,41 @@
+* {padding:0px;margin:0px;}
+a {text-decoration: none;color:black;}
+ul {list-style-type: none;}
+#clear{ clear:both;}
+
+#hidden_nav{
+    width:0%;
+    
+    background-color: gray;
+}
+header{
+    
+    height:100px;
+    width:100%;
+    background-color: aqua;
+    
+}
+main{
+    background-color: bisque;
+}
+
+#main_wrap{
+    
+    width:100%;
+    background-color: rgb(219, 132, 132);
+}
+#mother_wrap{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+footer{
+    width:100%;
+    height:200px;
+    background-color: blueviolet;
+    
+}
+#test{
+    position:fixed;
+    top:0px;
+}
