@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+    <style>
+        
+        * {padding:0px;margin:0px;}
+        a {text-decoration: none;color:black;}
+        ul {list-style-type: none;}
+        #clear{ clear:both;}
+
+        #hidden_nav{
+            width:0%;
+            
+            background-color: gray;
+        }
+        header{
+            position:sticky;
+            top:0px;
+            height:100px;
+            background-color: aqua;
+            z-index: 5;
+        }
+        main{
+            
+            background-color: bisque;
+        }
+
+        #main_wrap{
+            position:relative;
+            width:100%;
+            background-color: rgb(219, 132, 132);
+        }
+        #mother_wrap{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+        footer{
+            width:100%;
+            height:200px;
+            background-color: blueviolet;
+            
+        }
+    </style>
+
+
+</head>
+<body>
+    <div id = "mother_wrap">
+
+        <nav id = "hidden_nav"></nav>
+
+        <div id = "main_wrap">
+            <header></header>
+            
+            <main> <div style="width:200px;height:200px;border:1px solid red;"></div>
+            <div style="width:200px;height:200px;border:1px solid red;"></div>
+            <div style="width:200px;height:200px;border:1px solid red;"></div>
+        </main>
+            <footer></footer>
+        </div>
+        
+
+    </div>
+
+    <script src="jquery-3.6.3.min.js" ></script> 
+    <script>
+        $(document).ready(function(){
+            var a=0;
+
+            $("#main_wrap").click(function(){
+                if(a==1){
+                    $("#main_wrap").stop();
+                    $("#hidden_nav").stop();
+
+                    $("#main_wrap").animate({"width": "100%"},200);
+                    $("#hidden_nav").animate({"width": "0%"},200); 
+                    $("body").css({"overflow":"auto"});
+                    
+                    
+                    a=0;
+                }else{
+                    $("#main_wrap").stop();
+                    $("#hidden_nav").stop();
+
+                    $("#main_wrap").animate({"width": $("#main_wrap").width()},200);
+                    $("#hidden_nav").animate({"width": "20%"},200); 
+                    $("body").css({"overflow":"hidden"});
+                    a=1;
+                }
+                
+            });
+
+          
+        });
+
+        
+    </script>
+
+</body>
+</html>
