@@ -9,68 +9,48 @@
 </head>
 <body>
     <div id = "mother_wrap">
-
         <nav id = "hidden_nav">
             
         </nav>
-
         <div id = "main_wrap">
-            <header>헤더</header>
-            
+            <header>
+                <div id = "main_nav_background"></div>
+                <div id="hidden_nav_button"> </div>
+                <div style="width:fit-content;" id="logo_box">
+                    <img style="height:70px;" id="logo2" src="img/logo2.png">
+                </div>
+                <div id = "header_nav">
+                    <ul>
+                        <li id="nav_li_box"><a href="#">상점</a>
+                        <li id="nav_li_box"><a href="#">장바구니</a>
+                        <li id="nav_li_box"><a href="#">내정보</a>
+                        <li id="nav_li_box"><a href="#">공지사항</a>
+                    </ul>
+                    <div style="margin-top:20px">
+                        <ul>
+                            <li id="nav_li_box"><ul><li>gd</li><li>gd2</li><li>gd3</li></ul>
+                            <li id="nav_li_box"><ul><li>gd</li><li>gd2</li><li>gd3</li></ul>
+                            <li id="nav_li_box"><ul><li>gd</li><li>gd2</li><li>gd3</li></ul>
+                            <li id="nav_li_box"><ul><li>gd</li><li>gd2</li><li>gd3</li></ul>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <div style="width:100%;height:80px;"></div>
             <main> 
-            <div style="width:1400px;height:200px;border:1px solid red;">ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</div>
-            <div style="width:200px;height:200px;border:1px solid red;"></div>
-            <div style="width:200px;height:200px;border:1px solid red;"></div>
-            <div style="width:200px;height:200px;border:1px solid red;"></div>
-            <div style="width:200px;height:200px;border:1px solid red;"></div>
-            <div style="width:200px;height:200px;border:1px solid red;"></div>
-            <div style="width:200px;height:200px;border:1px solid red;"></div>
-            <div style="width:200px;height:200px;border:1px solid red;"></div>
-            </main>
+            <div style="float:left;width: 100%;"><img style="width:50%;" src="img/5531606.jpg"></div>   
+            <div style="float:left;width: 50%;height: 140px;"><img style="width:50%" src="img/banner1.jpg"></div>
+            <div style="float:left;width: 50%;height: 140px;"><img style="width:50%" src="img/food.jpg"></div>
+            <div style="float:left;width: 50%;height: 140px;"><img style="width:50%" src="img/299.jpg"></div>
 
+            <div id="clear"></div>
+            
+            </main>
             <footer></footer>
         </div>
-        
-
     </div>
 
     <script src="jquery-3.6.3.min.js" ></script> 
-    <script>
-        $(document).ready(function(){
-            var a=0;
-            var n;
-            $("#main_wrap").click(function(){
-                if(a==1){
-                    $("#main_wrap").stop();
-                    $("#hidden_nav").stop();
-    
-                    $("#main_wrap").animate({"width": "100%"},200);
-                    $("#mother_wrap").css({"width":"100%"});
-                    $("#hidden_nav").animate({"width": "0px"},200); 
-                    $("body").css({"overflow":"auto"});
-                    
-                    
-                    a=0;
-                }else{
-                    $("#main_wrap").stop();
-                    $("#hidden_nav").stop();
-                    n = $("#main_wrap").width()+200;
-                    $("#mother_wrap").css({"width":n});
-                    n = $("#main_wrap").width()-200;
-                    $("#main_wrap").animate({"width": n},200);
-                    
-                    $("#hidden_nav").animate({"width":"200px"},200); 
-                    $("body").css({"overflow":"hidden"});
-                    a=1;
-                }
-                
-            });
-
-          
-        });
-
-        
-    </script>
-
+    <script src="my_jscript.js"></script>
 </body>
 </html>
