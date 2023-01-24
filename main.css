@@ -1,0 +1,40 @@
+
+main{
+    background-color: rgb(238, 219, 197);
+    position:relative;
+}
+
+#main_wrap{
+    
+    width:100%;
+    background-color: rgb(99, 58, 65);
+}
+#mother_wrap{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+#main_num1_box{
+    width:1200px;margin:0 auto;background-color: gray;height: 870px;
+    margin-top:20px;
+    box-shadow: 0px 10px 50px 10px black;
+    border-radius: 30px;
+}
+#main_num1_box > div{
+    margin-top:22px;
+    float:left;
+    width:25%;
+}
+#main_num1_box img{
+    margin-left:32px;
+    margin-top:5px;
+}
+#right_sticky{
+    width:300px;height:800px;position:sticky;left:calc(50% + 630px);top:80px;float:left;background-color: gray;margin-top:20px;border-radius: 0px;overflow:hidden;
+}
+#left_sticky{
+    width:300px;height:800px;position:sticky;right:calc(50% + 630px);top:80px;float:right;background-color: gray;margin-top:180px;border-radius: 0px;overflow:hidden;
+}
+#main_login_box{
+    width:300px;height:140px;border:1px solid red;position:absolute;border-radius: 30px;background-color: rgb(231, 231, 193);box-shadow:0px 0px 3px 3px black;left:calc(50% - 930px);margin-top:20px;
+}

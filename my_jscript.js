@@ -2,7 +2,8 @@ $(document).ready(function(){
     var a=-1;
     var n;
     var m;
-
+    var l=0;
+    var t=0;
 
     if(window.innerWidth < 1300){
         m=0;
@@ -70,7 +71,7 @@ $(document).ready(function(){
 
         $("#hidden_nav").css({"height":window.innerHeight});
 
-        if(window.innerWidth < 900){
+        if(window.innerWidth < 1300){
             m=0;
             $("header").css({"background":"linear-gradient(to bottom ,rgba(114, 196, 180, 1) 70px,rgba(114, 196, 180, 0.3) 1px)"});
             $("#logo_box").css({"position":"relative","left":($("header").innerWidth()/2)-102.5});
@@ -134,22 +135,28 @@ $(document).ready(function(){
     $("header").mouseenter(function(){
         if(m==1){
             $(this).stop();
-            $(this).animate({"height":"300px"});
-            $(this).css({"background":"linear-gradient(to bottom ,rgba(114, 196, 180, 1) 70px,rgba(51, 49, 49, 0.8) 1px)"});
+            $(this).animate({"height":"440px"});
+            $(this).css({"background":"linear-gradient(to bottom ,rgba(44, 126, 110, 1) 70px,rgba(51, 49, 49, 0.8) 1px)"});
         }
     });
     $("header").mouseleave(function(){
         if(m==1){
             $(this).stop();
-            $(this).animate({"height":"70px"});
+            $(this).css({"height":"70px"});
             $(this).css({"background":"linear-gradient(to bottom ,rgba(114, 196, 180, 1) 70px,rgba(51, 49, 49, 0.8) 1px)"});
         }
     });
     
-    $("#header_menu_ul a").mouseenter(function(){
-        $(this).css({"color":"white"});
+    $(".hidden_nav_box_clickBT").click(function(){
+        $("#hidden_nav_box li").stop();
+        $(this).parent().children("li").slideToggle(100);
+        
+    });
+
+    $("#header_menu_table a").mouseenter(function(){
+        $(this).css({"color":"white","transition-duration":"0.3s"});
     })
-    $("#header_menu_ul a").mouseleave(function(){
+    $("#header_menu_table a").mouseleave(function(){
         $(this).css({"color":"black"});
     })
 
@@ -165,7 +172,7 @@ $(document).ready(function(){
             $("#mother_wrap").animate({"width":"100%"},200);
             $("#hidden_nav").animate({"width": "0px"},300);
             $("header").animate({"width": "100%"},200);
-            $("body").css({"overflow":"auto"});
+            $("body").css({"overflow-y":"visible"});
             a=0;
         }else{
             $("#mother_wrap").stop();
@@ -183,7 +190,5 @@ $(document).ready(function(){
             a=1;
         }
     });
-
-
 
 });

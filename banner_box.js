@@ -1,0 +1,55 @@
+$(document).ready(function(){
+    let interval;
+    i=1;
+    interval=setInterval(function(){
+        i++;
+        if(i==4){
+            $("#banner_box").stop();
+            $("#banner_box").css({"margin-left":"0vw"}).animate({"margin-left":"-100vw"},600);
+            i=0;
+        }else{
+            $("#banner_box").stop();
+            $("#banner_box").animate({"margin-left":-(i*100)+"vw"},900);
+        }
+    },8400);
+    
+    $("#banner_box").mouseenter(function(){
+        clearInterval(interval);
+    });
+    $("#banner_box").mouseleave(function(){
+        interval=setInterval(function(){
+            i++;
+            if(i==4){
+                $("#banner_box").stop();
+                $("#banner_box").css({"margin-left":"0vw"}).animate({"margin-left":"-100vw"},600);
+                i=0;
+            }else{
+                $("#banner_box").stop();
+                $("#banner_box").animate({"margin-left":-(i*100)+"vw"},900);
+            }
+        },8400);
+    });
+
+    $("#right_button").click(function(){
+        i++;
+        if(i==4){
+            $("#banner_box").stop();
+            $("#banner_box").css({"margin-left":"0vw"}).animate({"margin-left":"-100vw"},300);
+            i=0;
+        }else{
+            $("#banner_box").stop();
+            $("#banner_box").animate({"margin-left":-(i*100)+"vw"},300);
+        }
+    });
+    $("#left_button").click(function(){
+        i--;
+        if(i==-1){
+            $("#banner_box").stop();
+            $("#banner_box").css({"margin-left":"-300vw"}).animate({"margin-left":"-200vw"},300);
+            i=3;
+        }else{
+            $("#banner_box").stop();
+            $("#banner_box").animate({"margin-left":-(i*100)+"vw"},300);
+        }
+    });
+});

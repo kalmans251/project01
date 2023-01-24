@@ -1,0 +1,33 @@
+#banner_box{
+    height:420px;width:400vw;margin-left:-100vw;
+}
+#banner_box div:first-child{
+    background-image: url(img/banner33.jpg);height:420px;background-position: 50.0% 50%;background-size: cover;width:100vw;float:left;
+}
+#banner_box div:nth-child(2){
+    background-image: url(img/banner11.jpg);height:420px;background-position: 50.4% 50%;background-size: cover;width:100vw;float:left;
+}
+#banner_box div:nth-child(3){
+    background-image: url(img/banner22.png);height:420px;background-position: 50.4% 50%;background-size: cover;width:100vw;float:left;
+}
+#banner_box div:last-child{
+    background-image: url(img/banner33.jpg);height:420px;background-position: 50.0% 50%;background-size: cover;width:100vw;float:left;
+}
+#left_button{
+    position:absolute;left:calc(50% - 400px);top:200px;border-radius:20px;height:40px;
+}
+#right_button{
+    position:absolute;left:calc(50% + 400px);top:200px;border-radius:20px;height:40px;
+}
+#left_button img{
+    width:40px;border-radius:20px;box-shadow: 0px 0px 10px black;
+}
+#right_button img{
+    width:40px;border-radius:20px;box-shadow: 0px 0px 10px black;
+}
+#left_button:hover{
+    box-shadow: 0px 0px 20px black;
+}
+#right_button:hover{
+    box-shadow: 0px 0px 20px black;
+}

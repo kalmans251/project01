@@ -1,0 +1,107 @@
+#hidden_nav{
+    width:0%;
+    background-color: rgb(68, 67, 67);
+}
+#login_box{
+    margin-top:7px;
+    margin-left:7px;
+    height:47px;
+    width:167px;
+    background-color: rgb(34, 255, 0);
+    border:1px solid black;
+    border-radius: 5px;
+    text-align: center;
+}
+#asign_box{
+    font-size: 12px;
+    width:50px;
+    background-color: rgb(34, 255, 0);
+    border:1px solid black;
+    border-radius: 5px;
+    margin-left:9px;
+    margin-top:2px;
+    text-align: center;
+}
+#seek_id_box{
+    font-size: 10px;
+    width:34px;
+    background-color: rgb(34, 255, 0);
+    border:1px solid black;
+    border-radius: 5px;
+    margin-left:12px;
+    margin-top:4px;
+    text-align: center;
+}
+#seek_pass_box{
+    font-size: 10px;
+    width:65px;
+    background-color: rgb(34, 255, 0);
+    border:1px solid black;
+    border-radius: 5px;
+    margin-left:0px;
+    margin-top:4px;
+    text-align: center;
+}
+#hidden_nav{
+    overflow-y:scroll;
+    -ms-overflow-style: none;
+    position:relative;
+    z-index: 1;
+}
+#hidden_nav::-webkit-scrollbar { 
+    display: none;
+    width: 0 !important;
+}
+#hidden_nav_box{
+    width:184px;
+    margin-left: 6px;
+    box-shadow:0px 0px 8px 6px black;
+    height:fit-content;
+    margin-top:100px;
+    border-radius: 10px;
+}
+#hidden_nav_login_etc{
+    float:left;
+    width:184px;
+    margin-left:6px;
+    height:80px;;
+   
+    box-shadow:0px 0px 8px 6px black;
+    margin-top:10px;
+    border-radius: 10px;
+}
+#hidden_nav_login_etc div{
+    float:left;
+}
+#hidden_nav_box ul{
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+#hidden_nav_box li{
+    
+    font-size:18px;
+    font-weight: bold;
+    font-family: 굴림체;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+#hidden_nav_box li a:hover{
+    color:white;
+    transition-duration: 0.3s;
+}
+.hidden_nav_box_clickBT{
+    float:right;
+    position:relative;
+    right:20px;
+}
+.hidden_nav_box_clickBT:hover{
+    color:white;
+    transition-duration: 0.3s;
+}
+#hidden_nav_ul_char:hover{
+    color:white;
+    transition-duration: 0.3s;
+}

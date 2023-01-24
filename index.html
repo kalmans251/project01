@@ -4,470 +4,208 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        /*------------------Overal--------------------*/
-        
-        body{
-             background-color: rgb(160, 243, 152);
-        }
-        
-        *{
-            margin:0px;
-            padding:0px;
-        }
-        a{
-            text-decoration: none;
-            color:black;
-        }
-        ul{
-            list-style-type: none;
-        }
-        #clear{
-           clear:both;
-        }
-        /*------------------Overal--------------------*/
-
-        /*------------------header--------------------*/
-        #logo_box{
-            width:fit-content;
-        }
-        
-        #wrap{
-            float:left;
-            overflow: hidden;
-            width:100%;
-        }
-
-        #header_outline{
-            float:left;
-            background-color: rgb(228, 228, 228);
-            width:100%;
-            height: 50px;
-            position:relative;
-            left:0;
-            top:0;
-        }
-        #logo1{
-            float:left;
-            width:80px;
-            height: 50px;
-        }
-        #logo2{
-            float:left;
-            position:relative;
-            right:20px;
-            width:150px;
-            height: 50px;
-        }
-        #header_nav_outline{
-            margin:0 auto;
-            width:450px;
-        }
-        #header_nav_outline ul{
-            padding-top:15px;
-            padding-bottom:14px;
-            width:100%;
-            padding-left: 5px;
-            padding-right: 5px;
-            
-        }
-        #header_nav_maintext_li{
-            display: inline-block;
-            width:19%;
-        }
-        #header_right{
-            float:right;
-            display: none;
-        }
-        #header_right li{
-            display: inline-block;
-        }
-        
-        #compressed_nav{
-            padding-top: 5px;
-            width:0px;
-            height:;
-            background-color: rgb(128, 167, 217);
-           float:left;
-        }
-        #absolute{
-            position:absolute;
-            z-index: 1;
-            width:fit-content;
-            
-        }
-        #small_listbox{
-            display: none;
-            position:absolute;
-            background-color: black;
-            width:30px;
-            height:30px;
-            left:10px;
-            top:10px;
-        }
-        #main{
-            background-color: rgb(160, 243, 152);
-            width:100%;
-            
-        }
-        #hidden_header_nav{
-            position:absolute;
-            left:0px;
-            top:100px;
-            
-            width:100%;
-            height:5px;
-            background-color: gray;
-        }
-        #header_backgorund{
-            width:30%;
-            height:50px;
-            background-color: rgb(228, 228, 228);
-            position:absolute;
-            right:0;
-            
-        }
-        #top_banner{
-            width:100%;
-            height:50px;
-            background-color:aqua;
-            
-            right:0;
-        }
-        #compressed_nav:nth-child(2) ul{
-            display: none;
-        }
-        
-    </style>
-
-
-<!--===============================SCRIPT Start========================================-->
-    <script src="jquery-3.6.3.min.js" ></script> 
-
-    <script>
-
-        var list_minibox = $(".nav_mini_box");
-        
-        
-
-        var onetime =0;
-        
-        if(window.innerWidth < 1100){
-            var n = 0;
-            var m=0;
-            var mode=0;
-        }else if(window.innerWidth < 90000){
-            var n = 1;
-            var m=1;
-            var mode=1;
-        }
-        window.onload = function(){
-            if(n==1){
-                    $("#logo_box").css({position:"relative",left:"0"});
-                    $("#logo_box").css({position:"relative",left:"0"});
-                    $("#mother_wrap").css({width:"100%"});
-                    $("#wrap").css({width:"100%"});
-                    $("#absolute").css({width:"fit-content"});
-                    $("#header_right").css({display:"block"});
-                    $("#header_nav_outline").fadeIn(300);
-                    $("#wrap").css({width:"100%"});
-                    $("#header_nav_outline").show();
-                    if(m==1){
-                        $("#absolute").css({left:"0"},300);
-                        $("#small_listbox").css({left:"10px"},100);
-                        $("#compressed_nav").css({width:"0px"},100);
-                        m=0;
-                    }else{
-                        $("#absolute").css({left:"0"});
-                        $("#small_listbox").fadeOut();
-                        $("#compressed_nav").css({width:"0px"});
-                    }
-                    $("#hidden_header_nav,#header_outline").mouseenter(function(){
-                        $("#hidden_header_nav").stop();
-                        $("#hidden_header_nav").animate({height:"300px"},80);
-                    });
-                    $("#hidden_header_nav,#header_outline").mouseleave(function(){
-                        $("#hidden_header_nav").stop();
-                        $("#hidden_header_nav").animate({height:"5px"},80);
-                    });
-            }else if(n==0){
-                    $("#small_listbox").css({left:"10px"});
-                    $("#mother_wrap").css({width:"100%"})
-                    $("#wrap").css({width:"100%"});
-                    $("#header_right").fadeOut();
-                    $("#absolute").css({left:"30%",width:"230px"});
-                    $("#header_nav_outline").css({display:"none"});
-                    $("main").css({width:"100%"});
-                    $("#small_listbox").css({display:"block"}); 
-                    $("#hidden_header_nav,#header_outline").mouseenter();
-                    $("#hidden_header_nav,#header_outline").mouseleave();
-            }
-
-        };
-        
-        
-        $(document).ready(function(){
-
-            $("#nav_mini_box1").click(function(){$("#nav_ul1").stop();$("#nav_ul1").slideToggle(100);});
-            $("#nav_mini_box2").click(function(){$("#nav_ul2").stop();$("#nav_ul2").slideToggle(100);});
-            $("#nav_mini_box3").click(function(){$("#nav_ul3").stop();$("#nav_ul3").slideToggle(100);});
-            $("#nav_mini_box4").click(function(){$("#nav_ul4").stop();$("#nav_ul4").slideToggle(100);});
-            $("#nav_mini_box5").click(function(){$("#nav_ul5").stop();$("#nav_ul5").slideToggle(100);});
-
-            $(window).resize(function(){
-
-
-
-
-                if(window.innerWidth < 1100){
-                    
-                    mode=0;
-                    
-                    $("#mother_wrap").stop();
-                    $("#wrap").stop();
-                    $("#header_right").stop();
-                    $("#absolute").stop();
-                    $("#header_nav_outline").stop();
-                    $("#header_nav_outline").stop();
-                    $("#small_listbox").stop();
-
-                    $("#small_listbox").css({left:"10px"});
-                    $("#mother_wrap").css({width:"100%"})
-                    
-                    $("#header_right").fadeOut();
-                    
-                    $("#header_nav_outline").css({display:"none"});
-                    $("main").css({width:"100%"});
-                    $("#small_listbox").show(); 
-                    $("#hidden_header_nav,#header_outline").off("mouseenter");
-                    $("#hidden_header_nav,#header_outline").off("mouseleave");
-                    $("#hidden_header_nav").css({height:"5px"});
-
-                    $("#hidden_header_nav,#header_outline").mouseenter(function(){
-                        $("#hidden_header_nav").stop();
-                        $("#hidden_header_nav").animate({height:"5px"},80);
-                    });
-                    $("#hidden_header_nav,#header_outline").mouseleave(function(){
-                        
-                        $("#hidden_header_nav").stop();
-                        $("#hidden_header_nav").animate({height:"5px"},80);
-                    });
-                    if(m==1){
-                        $("#wrap").css({width:"1100px"});
-                        $("#absolute").css({left:"200px"},100,"swing");
-                    }else{
-                        $("#wrap").css({width:"100%"});
-                        $("#absolute").css({left:"30%",width:"230px"});
-                    }
-                   
-                }else if(window.innerWidth < 90000){
-                    
-                    mode=1;
-                    
-                    $("#mother_wrap").stop();
-                    $("#wrap").stop();
-                    $("#header_right").stop();
-                    $("#header_nav_outline").stop();
-                    $("#wrap").stop();
-                    $("#header_nav_outline").stop();
-                    
-
-                    $("#main").css({width:"100%"});
-                    $("#absolute").css({width:"fit-content"});
-                    $("#logo_box").css({position:"relative",left:"0"});
-                    $("#mother_wrap").css({width:"100%"});
-                    $("#wrap").css({width:"100%"});
-                    $("#header_right").fadeIn();
-                    $("#header_nav_outline").fadeIn(300);
-                    $("#wrap").css({width:"100%"});
-                    $("#header_nav_outline").show();
-                    if(m==1){
-                        $("#absolute").stop();
-                        $("#small_listbox").stop();
-                        $("#small_listbox").stop();
-                        $("#compressed_nav").stop();
-
-                        $("#absolute").animate({left:"0"},300);
-                        $("#small_listbox").animate({left:"10px"},100);
-                        $("#small_listbox").fadeOut(200);
-                        $("#compressed_nav").animate({width:"0px"},100);
-                        m=0;
-                    }else{
-                        $("#absolute").stop();
-                        $("#small_listbox").stop();
-                        $("#compressed_nav").stop();
-
-                        $("#absolute").animate({left:"0"});
-                        $("#small_listbox").fadeOut();
-                        $("#compressed_nav").animate({width:"0px"});
-                    }
-                    $("#hidden_header_nav,#header_outline").off("mouseenter");
-                    $("#hidden_header_nav,#header_outline").off("mouseleave");
-                    $("#hidden_header_nav,#header_outline").mouseenter(function(){
-                        $("#hidden_header_nav").stop();
-                        $("#hidden_header_nav").animate({height:"300px"},80);
-                    });
-                    $("#hidden_header_nav,#header_outline").mouseleave(function(){
-                        $("#hidden_header_nav").stop();
-                        $("#hidden_header_nav").animate({height:"5px"},80);
-                    });
-                }
-            });
-        });
-        function listToggle(){
-            if(m==0){
-                $("#compressed_nav").stop()
-                $("#small_listbox").stop()
-                $("#absolute").stop();
-                $("#wrap").stop();
-                $("#absolute").animate({left:"200px"},100,"swing");
-                $("#compressed_nav").animate({width:"150px"},100,"swing");
-                $("#wrap").css({width:"calc( 100% - 150px )"});
-                $("#small_listbox").animate({left:"10px"});
-                
-                m=1;
-            }else if(m=1){
-                $("#compressed_nav").stop()
-                $("#small_listbox").stop()
-                $("#absolute").stop();
-
-                $("#compressed_nav").animate({width:"0"},100,"swing");
-                $("#wrap").animate({width:"100%"},130,"swing");
-                $("#small_listbox").animate({left:"10px"});
-                $("#absolute").animate({left:"30%"},100);
-                m=0;
-            }
-        }
-
-        
-        
-        
-        
-        
-        
-
-
-    </script>
-    <!--===============================SCRIPT End========================================-->
+    <title>Document</title>     
+    <link rel = "stylesheet" type = "text/css" href="main.css">
+    <link rel = "stylesheet" type = "text/css" href="banner_box.css">
+    <link rel = "stylesheet" type = "text/css" href="header.css">
+    <link rel = "stylesheet" type = "text/css" href="hidden_nav.css">
+    <link rel = "stylesheet" type = "text/css" href="footer.css">
+    
 </head>
 <body>
-
-    <script>
-        
-    </script>
-
-<div id="top_banner"></div>
-<div id="header_backgorund"></div>
-</div>
-    
     <div id = "mother_wrap">
-        <div id = "hidden_header_nav"></div>
-        <div id = "compressed_nav">
-            <div style="background-color: red;height:50px;" > div1</div>
-            <div> 
-                <div id = "nav_mini_box1" >상점</div>
-                <ul id = "nav_ul1">
-                    <li><a href = "#">###</li>
-                    <li><a href = "#">###</li>
-                    <li><a>###</li>
-                    <li><a>###</li>
-                </ul>    
+        <!-- 좌측 숨겨진 네비박스-->
+        <nav id = "hidden_nav">
+            <div id="hidden_nav_login_etc">
+                    <div id="login_box"><img style="width:85px;position:relative;top:9px;left:-4px;" src="img/logo2.png">로그인</div>
+                    <div id="seek_id_box">아이디</div>
+                    <div id="seek_pass_box">비밀번호찾기</div>
+                    <div id="asign_box">회원가입</div>
+                    
             </div>
-            <div> 
-                <div id = "nav_mini_box2" >장바구니</div>
-                <ul id = "nav_ul2">
-                    <li><a href = "#">###</li>
-                    <li><a href = "#">###</li>
-                    <li><a>###</li>
-                    <li><a>###</li>
-                </ul>    
+            <div id="hidden_nav_box">
+                <ul><a href="#">»<span id="hidden_nav_ul_char">상점</span>«</a><a class="hidden_nav_box_clickBT" href="#">V</a>
+                    <li><a href="#">사료</a></li><li><a href="#">간식</a></li><li><a href="#">배변/위생</a></li><li><a href="#">건강식품</a></li><li><a href="#">장난감</a></li>
+                    <li><a href="#">식기</a></li><li><a href="#">의류/악세사리</a></li><li><a href="#">목욕/미용</a></li><li><a href="#">하우스/울타리</a></li>
+                </ul>
+                <ul><a href="#">»<span id="hidden_nav_ul_char">장바구니</span>«</a><a class="hidden_nav_box_clickBT" href="#">V</a>
+                    <li><a href="#">주문</a></li><li><a href="#">찜목록</a></li>
+                </ul>
+                <ul><a href="#">»<span id="hidden_nav_ul_char">내정보</span>«</a><a class="hidden_nav_box_clickBT" href="#">V</a>
+                    <li><a href="#">정보수정</a></li><li><a href="#">구매내역</a></li><li><a href="#">반려견정보</a></li><li><a href="#">주소등록</a></li>
+                </ul>
+                <ul><a href="#">»<span id="hidden_nav_ul_char">자유게시판</span>«</a><a class="hidden_nav_box_clickBT" href="#">V</a>
+                    <li><a href="#">글쓰기</a></li><li><a href="#">내가올린글</a></li>
+                </ul>
             </div>
-            <div> 
-                <div id = "nav_mini_box3">내정보</div>
-                <ul id = "nav_ul3">
-                    <li><a href = "#">###</li>
-                    <li><a href = "#">###</li>
-                    <li><a>###</li>
-                    <li><a>###</li>
-                </ul> 
-            </div>
-            <div> 
-                <div id = "nav_mini_box4">문의사항</div>
-                <ul id = "nav_ul4">
-                    <li><a href = "#">###</li>
-                    <li><a href = "#">###</li>
-                    <li><a>###</li>
-                    <li><a>###</li>
-                </ul>   
-            </div>
-            <div > 
-                <div id="nav_mini_box5">건의사항</div>
-                <ul id = "nav_ul5">
-                    <li><a href = "#">###</li>
-                    <li><a href = "#">###</li>
-                    <li><a>###</li>
-                    <li><a>###</li>
-                </ul>  
-            </div>
-            
-           
-        </div>
-        <div id="absolute">
-            <div id="logo_box">
-                <img id="logo1" src="img/logo1.png">
-                <img id="logo2" src="img/logo2.png">
-            </div>
-        </div>
+        </nav>
+        <!-- 메인 통째로 한 묶음-->
+        <div id = "main_wrap">
+            <!-- 헤더-->
+            <header>
+                <div id = "main_nav_background"></div>
+                <div id="hidden_nav_button"> </div>
+                <div style="width:fit-content;" id="logo_box">
+                    <a href="#"><img style="height:70px;" id="logo2" src="img/logo2.png"></a>
+                </div>
+                <div id="header_right_box">
+                    <ul>
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">회원가입</a></li>
+                        <li><a href="#">고객센터</a></li>
+                    </ul>
+                    <div id="search_box">
+                        <div><input type="text" name="search_main"></inpu></div>
+                        <a href="#"><img style="height:26px;" src="img/search1.png"></a>
+                    </div>
+                </div>
+                <div id = "header_nav">
+                    <ul>
+                        <li id="nav_li_box"><a href="#">상점</a>
+                        <li id="nav_li_box"><a href="#">장바구니</a>
+                        <li id="nav_li_box"><a href="#">내정보</a>
+                        <li id="nav_li_box"><a href="#">자유게시판</a>
+                    </ul>
+                    <div style="margin-top:20px">
+                        <table id="header_menu_table">
+                            <tr>
+                                <td><a href="#">사료</a></td><td><a href="#">주문</a></td><td><a href="#">정보수정</a></td><td><a href="#">글쓰기</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">간식</a></td><td><a href="#">찜목록</a></td><td><a href="#">구매내역</a></td><td><a href="#">내가올린글</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">배변/위생</a></td><td></td><td><a href="#">반려견정보</a></td><td></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">건강식품</a></td><td></td><td><a href="#">주소등록</a></td><td></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">장난감</a></td><td></td><td></td><td></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">식기</a></td><td></td><td></td><td></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">의류/악세사리</a></td><td></td><td></td><td></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">목욕/미용</a></td><td></td><td></td><td></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">하우스/울타리</a></td><td></td><td></td><td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </header>
+            <div style="width:100%;height:80px;"></div>
+            <main>
+                <!-- 베너 박스-->
+                <div id="left_button"><img src="img/OIP_left.png"></div>
+                <div id="right_button"><img src="img/OIP_right.png"></div>
+                <div id="banner_box">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
 
-        <div id="wrap">
-            <div id = "header_outline">
-                <div id="small_listbox" onClick ="listToggle();">
+
+
+                <!-- 메인 상품 진열박스-->
+
+                <div style="width:100%;height:10px;background-color: rgb(59, 65, 44);"></div>
+                <div id="main_login_box">
+                    <table style="margin-left:30px;margin-top:30px;">
+                        <tr>
+                            <td align="right">아이디:</td><td><input style="width:90px;" type="text"></td><td colspan="2" rowspan="2"><a href="#">로그인</a></td>
+                        </tr>
+                        <tr>
+                            <td>비밀번호:</td><td><input style="width:90px;" type="password"></td>
+                        </tr>
+                        <tr>
+                            <td></td><td><span style="font-size:10px"><a href="#">아이디</a>/<a href="#">비밀번호</a> 찾기</span></td><td></td><td> <span style="font-size:10px"><a href="#">회원가입</a></span></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="left_sticky">
+                    <nav style="position:relative;width:120px;height:45px;background-color:chartreuse;font-size: 30px;border-radius: 10px;left:0px;top:0px;float:right"><strong>특가상품</strong></nav>
+                    
+                    <div style="width:300px;float:right;text-align: center;">
+                        <img src="img/forgans_pack.jpg">
+                    </div>
+                    <div style="width:300px;float:right;text-align:center;">
+                        <img src="img/forgans_pack.jpg">
+                    </div>
+                    <div style="width:300px;float:right;text-align:center;">
+                        <img src="img/forgans_pack.jpg">
+                    </div>
                     
                 </div>
-            
-                <div id="header_right">
-                    <ul>
-                        <li><a href="#">로그인</li>
-                        <li><a href="#">회원가입</li>
-                    </ul>
+                <div id="right_sticky">
+                    <nav style="position:relative;width:90px;height:45px;background-color:chartreuse;font-size: 30px;border-radius: 10px;left:0px;top:0px"><strong>신상품</strong></nav>
+                    
+                    <div style="width:300px;text-align:center;">
+                        <img src="img/forgans_pack.jpg">
+                    </div>
+                    <div style="width:300px;text-align:center;">
+                        <img src="img/forgans_pack.jpg">
+                    </div>
+                    <div style="width:300px;text-align:center;">
+                        <img src="img/forgans_pack.jpg">
+                    </div>
                 </div>
 
-                <div id="header_nav_outline">
-                    <ul>
-                        <li id="header_nav_maintext_li"><a href="#">상점</a></li>
-                        <li id="header_nav_maintext_li"><a href="#">장바구니</a></li>
-                        <li id="header_nav_maintext_li"><a href="#">내정보</a></li>
-                        <li id="header_nav_maintext_li"><a href="#">문의사항</a></li>
-                        <li id="header_nav_maintext_li"><a href="#">건의사항</a></li>
-                    </ul>
+                <!-- 메인 -->
                 
-
-
+                <div id = "main_num1_box">
+                    <nav style="position:absolute;width: 120px;height:45px;background-color:chartreuse;font-size: 30px;border-radius: 10px;left:calc(50% - 60px);top:427px"><strong>인기상품</strong></nav>
+                    <div><img src="img/forgans_pack.jpg">
+                        <div style="height:50px;border:0px solid red"><span>포켄스 카누들 필로팩</span><span>별점</span></div>
+                    </div>
+                    <div><img src="img/tooth_paste.jpg">
+                        <div style="height:50px;border:0px solid red"><span></span></div>
+                    </div>
+                    <div><img src="img/natural_core_care.jpg">
+                        <div style="height:50px;border:0px solid red"><span></span></div>
+                    </div>
+                    <div><img src="img/natural_nutral_treet.jpg">
+                        <div style="height:50px;border:0px solid red"><span></span></div>
+                    </div>
+                    <div><img src="img/meet_toy.jpg">
+                        <div style="height:50px;border:0px solid red"><span></span></div>
+                    </div>
+                    <div><img src="img/wood_stick.jpg">
+                        <div style="height:50px;border:0px solid red"><span></span></div>
+                    </div>
+                    <div><img src="img/sizer_treet.jpg">
+                        <div style="height:50px;border:0px solid red"><span></span></div>
+                    </div>
+                    <div><img src="img/dental_treet.jpg">
+                        <div style="height:50px;border:0px solid red"><span></span></div>
+                    </div>
+                    <div><img src="img/chiken_cube.jpg">
+                        <div style="height:50px;border:0px solid red"><span></span></div>
+                    </div>
+                    <div><img src="img/forcanss_dentifairy.jpg">
+                        <div style="height:50px;border:0px solid red"><span></span></div>
+                    </div>
                 </div>
-            </div>
 
-            <div id="main" style="float:left;margin-top:5px;align-content: center;"> 
+                <div style="height:900px;border:1px solid red;width:1200px;margin:0 auto;margin-top:30px;margin-bottom:30px;"></div>
                 
-                <img src="img/banner1.jpg" style="width:100% ; height:40%;">
-            </div>
-
-            
+                
+                <div id="clear"></div>
+            </main>
+            <!-- 푸터 -->
+            <footer></footer>
         </div>
-
-        <footer style="width:100% ; height:100px;background-color:red;float:left;"></footer>
     </div>
-
-
-    
-
-    
-
-    
-    
-
-
-
-    
 </body>
 </html>
+
+<script src="jquery-3.6.3.min.js" ></script> 
+<script src="banner_box.js" ></script> 
+<script src="my_jscript.js"></script>
+<script src="main.js"></script>
