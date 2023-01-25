@@ -14,18 +14,18 @@ main{
     flex-direction: row;
     flex-wrap: nowrap;
 }
-#main_num1_box{
+.main_num1_box{
     width:1200px;margin:0 auto;background-color: gray;height: 870px;
     margin-top:20px;
     box-shadow: 0px 10px 50px 10px black;
     border-radius: 30px;
 }
-#main_num1_box > div{
+.main_num1_box > div{
     margin-top:22px;
     float:left;
     width:25%;
 }
-#main_num1_box img{
+.main_num1_box img{
     margin-left:32px;
     margin-top:5px;
 }

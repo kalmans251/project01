@@ -147,8 +147,17 @@ $(document).ready(function(){
     $(".hidden_nav_box_clickBT").click(function(){
         $("#hidden_nav_box li").stop();
         $(this).parent().children("li").slideToggle(100);
-        
+
+        if($(this).text()==="V"){
+            $(this).text("ㅡ");
+        }else{
+            $(this).text("V");
+        }
     });
+
+
+
+
 
     $("#header_menu_table a").mouseenter(function(){
         $(this).css({"color":"white","transition-duration":"0.3s"});
