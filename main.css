@@ -33,7 +33,7 @@ main{
     width:300px;height:800px;position:sticky;left:calc(50% + 630px);top:80px;float:left;background-color: gray;margin-top:20px;border-radius: 0px;overflow:hidden;
 }
 #left_sticky{
-    width:300px;height:800px;position:sticky;right:calc(50% + 630px);top:80px;float:right;background-color: gray;margin-top:180px;border-radius: 0px;overflow:hidden;
+    width:300px;height:800px;position:relative;right:calc(50% + 630px);top:10px;float:right;background-color: gray;margin-top:180px;border-radius: 0px;overflow:hidden;
 }
 #main_login_box{
     width:300px;height:140px;border:1px solid red;position:absolute;border-radius: 30px;background-color: rgb(231, 231, 193);box-shadow:0px 0px 3px 3px black;left:calc(50% - 930px);margin-top:20px;

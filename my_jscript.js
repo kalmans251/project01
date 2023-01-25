@@ -5,6 +5,7 @@ $(document).ready(function(){
     var l=0;
     var t=0;
 
+    $("#hidden_nav").css({"height":window.innerHeight});
     if(window.innerWidth < 1300){
         m=0;
         $("header").css({"background":"linear-gradient(to bottom ,rgba(114, 196, 180, 1) 70px,rgba(114, 196, 180, 0.3) 1px)"});
@@ -65,13 +66,10 @@ $(document).ready(function(){
         }
     }
 
-
-
     $(window).resize(function(){
 
-        $("#hidden_nav").css({"height":window.innerHeight});
-
         if(window.innerWidth < 1300){
+            $("#hidden_nav").css({"height":window.innerHeight});
             m=0;
             $("header").css({"background":"linear-gradient(to bottom ,rgba(114, 196, 180, 1) 70px,rgba(114, 196, 180, 0.3) 1px)"});
             $("#logo_box").css({"position":"relative","left":($("header").innerWidth()/2)-102.5});
@@ -119,7 +117,6 @@ $(document).ready(function(){
                 $("#hidden_nav").stop();
                 $("header").stop();
                 
-                
                 $("#main_wrap").css({"width": "100%"});
                 $("#mother_wrap").css({"width":"100%"});
                 $("#hidden_nav").css({"width": "0px"});
@@ -136,14 +133,14 @@ $(document).ready(function(){
         if(m==1){
             $(this).stop();
             $(this).animate({"height":"440px"});
-            $(this).css({"background":"linear-gradient(to bottom ,rgba(44, 126, 110, 1) 70px,rgba(51, 49, 49, 0.8) 1px)"});
+            $(this).css({"background":"linear-gradient(to bottom ,rgba(44, 126, 110, 1) 70px,rgba(71, 69, 69, 0.8) 1px)"});
         }
     });
     $("header").mouseleave(function(){
         if(m==1){
             $(this).stop();
             $(this).css({"height":"70px"});
-            $(this).css({"background":"linear-gradient(to bottom ,rgba(114, 196, 180, 1) 70px,rgba(51, 49, 49, 0.8) 1px)"});
+            $(this).css({"background":"linear-gradient(to bottom ,rgba(114, 196, 180, 1) 70px,rgba(71, 69, 69, 0.8) 1px)"});
         }
     });
     
